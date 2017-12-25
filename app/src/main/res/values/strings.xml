@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">FragmentTabHost</string>
     <string name="action_settings">Settings</string>
+
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
+    <string name="error_alias_empty">alias不能为空</string>
 </resources>

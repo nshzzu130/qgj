@@ -3,11 +3,21 @@
     package="com.app.gaolonglong.fragmenttabhost">
 
     <application
+        android:name="base.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+        </uses-permission>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        <uses-permission android:name="android.permission.INTERNET" >
+        </uses-permission>
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+        </uses-permission>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+        </uses-permission>
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
@@ -21,6 +31,13 @@
         <activity android:name=".Dingdan" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MessageListActivity"></activity>
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="c54c26525589f9a8936340dc" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="qgj" />
     </application>
 
 </manifest>
