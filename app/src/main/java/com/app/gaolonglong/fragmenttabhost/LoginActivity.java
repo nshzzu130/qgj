@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(cb.isChecked()){
-                    startActivity(new Intent(LoginActivity.this,MessageListActivity.class));
+                    startActivity(new Intent(LoginActivity.this,ShangjiaMainActivity.class));
                 }else{
                     startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 }

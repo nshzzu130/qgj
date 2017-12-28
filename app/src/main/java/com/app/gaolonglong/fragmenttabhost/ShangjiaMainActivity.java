@@ -2,8 +2,6 @@ package com.app.gaolonglong.fragmenttabhost;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTabHost;
@@ -11,9 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -21,18 +19,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ShangjiaMainActivity extends AppCompatActivity {
 
     private FragmentTabHost mTabHost;
     private ViewPager mViewPager;
     private List<Fragment> mFragmentList;
-    private Class mClass[] = {HomeFragment.class,ReportFragment.class,MessageFragment.class,CustomServiceFragment.class,MineFragment.class};
-    private Fragment mFragment[] = {new HomeFragment(),new ReportFragment(),new MessageFragment(),new CustomServiceFragment(),new MineFragment()};
-    private String mTitles[] = {"自由搭配","成品菜","金牌厨师","上门服务","我的"};
+    private Class mClass[] = {QiangdanFragment.class,MineFragment.class};
+    private Fragment mFragment[] = {new QiangdanFragment(),new MineFragment()};
+    private String mTitles[] = {"抢单","我的"};
     private int mImages[] = {
-            R.drawable.tab_home,
-            R.drawable.tab_report,
-            R.drawable.tab_message,
             R.drawable.tab_home,
             R.drawable.tab_mine
     };
@@ -41,18 +36,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         init();
-
     }
 
     private void init() {
-
         initView();
-
         initEvent();
     }
 
@@ -104,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabChanged(String tabId) {
                 mViewPager.setCurrentItem(mTabHost.getCurrentTab());
-                MainActivity.this.setTitle(mTitles[mTabHost.getCurrentTab()]);
+                ShangjiaMainActivity.this.setTitle(mTitles[mTabHost.getCurrentTab()]);
             }
         });
 
